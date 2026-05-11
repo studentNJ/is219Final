@@ -1,148 +1,143 @@
-# IS219 Final Portfolio Repository
+# IS219 Final Portfolio
 
-This repository is the working space for my IS219 final professional portfolio. It combines planning materials for the final presentation with the main technical project that supports my target direction as an AI engineer and full-stack problem solver.
+This repository contains a single-page professional portfolio built for the IS219 final project. The site presents an AI Engineer / Technical Problem Solver direction through a structured scrollytelling homepage built with Next.js.
 
-## Professional Direction
+The current implementation is a focused Next.js application, not a monorepo. It combines portfolio messaging, project framing, and presentation-ready sections in one site.
 
-This portfolio is positioned around an AI Engineer identity focused on full-stack infrastructure, intelligent data orchestration, and practical use of generative AI in a serious development workflow.
+## Overview
 
-Core signal for the project:
+The homepage is organized as a guided narrative for technical recruiters and engineering managers:
 
-- AI engineer / technical problem solver
-- Audience: technical recruiters and engineering managers
-- Focus: scalable, data-driven, user-facing software
-- Workflow: AI-assisted research, refactoring, debugging, and documentation with human review and correction
+- signal the professional direction
+- frame the featured project
+- explain the architecture story
+- show how AI fits into the workflow
+- group skills by delivery workflow
+- surface proof and contact links clearly
 
-## Featured Technical Project
+Most of the page copy lives in a single content file so the site can be revised quickly before final submission.
 
-The main implementation in this repository is **Student Reality Lab v2**, a chat-first housing affordability application built as a monorepo.
+## Tech Stack
 
-It is designed to demonstrate:
+- Next.js 15
+- React 19
+- TypeScript
+- CSS via `app/globals.css`
 
-- API orchestration across housing and census-style data sources
-- data normalization and affordability analysis
-- a user-facing chat interface built with Next.js
-- shared schemas and domain logic across packages
-- local persistence for conversation history
-- AI-supported planning and orchestration patterns
-
-The application supports prompts for metro comparisons, affordability calculations, trend summaries, live housing lookups, and chart-oriented responses.
-
-## Repository Structure
+## Project Structure
 
 ```text
 .
-├── references/
-│   └── planning/
-│       ├── initialPlan.md
-│       └── metrics.md
-└── student-reality-lab2-Concepcion/
-    ├── apps/
-    ├── packages/
-    ├── tests/
-    ├── scripts/
-    └── README.md
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── scroll-progress.tsx
+│   └── section-nav.tsx
+├── documentation/
+│   ├── initialPlan.md
+│   └── metrics.md
+├── lib/
+│   └── site-content.ts
+├── next.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-## What Is In This Repo
+## Key Files
 
-### `references/`
+### `app/page.tsx`
 
-Planning materials for the final portfolio submission, including:
+Renders the full homepage, including the hero, narrative sections, and reusable link pills.
 
-- initial positioning and project framing
-- assignment requirements and evaluation criteria
-- presentation context for the final review
+### `lib/site-content.ts`
 
-### `student-reality-lab2-Concepcion/`
+Stores the portfolio copy and section data in a single object. If you need to change section labels, hero text, skills, or placeholder links, this is the main file to edit.
 
-The active project monorepo containing:
+### `components/section-nav.tsx`
 
-- `apps/web`: Next.js web application
-- `packages/domain`: affordability and metro data logic
-- `packages/shared`: shared schemas and utilities
-- `packages/mcp-server`: tool implementations
-- `packages/db`: Prisma and SQLite persistence
-- `tests`: domain, shared, server, web, and e2e coverage
+Provides the sticky section navigation and updates the active state based on scroll position.
 
-## Why This Project Fits The Portfolio
+### `components/scroll-progress.tsx`
 
-This repository is intended to show evidence of the criteria described in the planning documents:
+Renders the progress bar at the top of the page based on scroll depth.
 
-- a clear future-facing technical identity
-- believable work aligned to AI engineering and applied software development
-- intentional use of AI as part of a professional workflow
-- project proof that goes beyond visuals and includes architecture, logic, and data handling
-- an implementation that can be run, tested, and discussed during presentation
+### `documentation/`
 
-## Local Development
+Contains planning and assignment-reference material used to shape the final portfolio:
 
-The main application lives in `student-reality-lab2-Concepcion/`.
+- `initialPlan.md`: project direction, audience, and presentation framing
+- `metrics.md`: assignment requirements and course guidance
+
+## Getting Started
 
 ### Prerequisites
 
 - Node.js 20+
 - npm
 
-### Install
+### Install dependencies
 
 ```bash
-cd student-reality-lab2-Concepcion
 npm install
 ```
 
-### Database Setup
-
-```bash
-npm run db:generate
-npm run db:push
-```
-
-### Run The App
+### Start the development server
 
 ```bash
 npm run dev
 ```
 
-Then open `http://localhost:3000`.
+Open `http://localhost:3000` in your browser.
 
-### Useful Commands
+### Create a production build
 
 ```bash
-npm run typecheck
-npm run test
-npm run test:web
-npm run test:e2e
+npm run build
 ```
 
-## Environment Notes
+### Run the production server
 
-The application can use environment variables such as:
+```bash
+npm run start
+```
 
-- `DATABASE_URL`
-- `OPENAI_API_KEY`
-- `OPENAI_MODEL`
-- `HUD_API_KEY`
-- `CENSUS_API_KEY`
+## Available Scripts
 
-If no OpenAI API key is configured, the app still supports its fallback rule-based planning path for covered prompt types.
+```bash
+npm run dev
+npm run build
+npm run start
+```
 
-## Portfolio Submission Notes
+## Content And Revision Notes
 
-Before final submission, this README should point reviewers to:
+The site currently includes placeholder link labels such as:
 
-- Hosted portfolio URL: add deployed site link here
-- GitHub profile or repository link: add public GitHub link here
-- LinkedIn profile: add updated LinkedIn link here
+- Add live portfolio URL
+- Add GitHub profile URL
+- Add LinkedIn profile URL
+- Add resume or contact link
 
-These links should remain easy to find so the repository supports the final presentation and grading requirements.
+These placeholders are defined in `lib/site-content.ts` and should be replaced with final public links before submission.
 
-## Presentation Focus
+## Deployment Notes
 
-For the final presentation, this repository supports discussion of:
+This repo is ready for standard Next.js deployment targets such as Vercel or Render. No custom environment variables are required by the current codebase.
 
-- the professional direction being pursued
-- the research and planning behind the portfolio
-- how AI was used intentionally during development
-- the architecture and implementation choices in Student Reality Lab v2
-- how the work was revised into a more credible professional portfolio project
+Before final submission, verify that:
+
+- the public portfolio URL is live
+- GitHub and LinkedIn links are real and visible on the page
+- final copy matches the presentation narrative
+- the featured project framing still aligns with the assignment goals
+
+## Purpose Of This Repository
+
+This repository supports the final IS219 presentation by packaging three things together:
+
+- the built portfolio site
+- the written planning materials behind it
+- the technical framing for an AI-engineer-focused professional identity
