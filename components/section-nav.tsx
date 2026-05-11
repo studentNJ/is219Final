@@ -17,6 +17,10 @@ export function SectionNav({ sections }: { sections: readonly Section[] }) {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        entries.forEach((entry) => {
+          entry.target.setAttribute("data-in-view", entry.isIntersecting ? "true" : "false");
+        });
+
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
