@@ -2,6 +2,8 @@
 
 This repository contains a single-page professional portfolio built for the IS219 final project. The site presents an AI Engineer / Technical Problem Solver direction through a structured scrollytelling homepage built with Next.js.
 
+Live portfolio website: https://is219final.onrender.com
+
 The current implementation is a focused Next.js application, not a monorepo. It combines portfolio messaging, project framing, and presentation-ready sections in one site.
 
 ## Overview
@@ -114,14 +116,13 @@ npm run start
 
 ## Content And Revision Notes
 
-The site currently includes placeholder link labels such as:
+Current public links:
 
-- Add live portfolio URL
-- Add GitHub profile URL
-- Add LinkedIn profile URL
-- Add resume or contact link
-
-These placeholders are defined in `lib/site-content.ts` and should be replaced with final public links before submission.
+- Live portfolio: https://is219final.onrender.com
+- Live project: https://student-reality-lab2-concepcion.onrender.com
+- Portfolio repository: https://github.com/studentNJ/is219Final
+- Project repository: https://github.com/studentNJ/student-reality-lab2-Concepcion
+- LinkedIn: https://www.linkedin.com/in/jason-concepcion/
 
 ## Deployment Notes
 
@@ -129,7 +130,7 @@ This repo is ready for standard Next.js deployment targets such as Vercel or Ren
 
 Before final submission, verify that:
 
-- the public portfolio URL is live
+- the public portfolio URL is live: https://is219final.onrender.com
 - GitHub and LinkedIn links are real and visible on the page
 - final copy matches the presentation narrative
 - the featured project framing still aligns with the assignment goals
