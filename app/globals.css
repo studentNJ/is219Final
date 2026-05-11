@@ -178,6 +178,13 @@ main {
 }
 
 .hero-panel {
+  opacity: 1;
+  transform: none;
+  border-color: var(--line-strong);
+  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.36);
+}
+
+.hero-panel {
   padding: 48px;
   min-height: calc(100vh - 56px);
   display: grid;
@@ -217,7 +224,7 @@ main {
 
 .hero-panel h1 {
   margin: 0;
-  max-width: 10ch;
+  max-width: 9ch;
   font-size: clamp(3.4rem, 8vw, 6.8rem);
   line-height: 0.9;
   letter-spacing: -0.06em;
@@ -308,11 +315,41 @@ main {
 }
 
 .hero-grid,
+.orientation-board,
 .project-panels,
 .architecture-grid,
 .modal-grid {
   display: grid;
   gap: 16px;
+}
+
+.orientation-board {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 8px;
+}
+
+.orientation-board article {
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(157, 196, 255, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
+}
+
+.orientation-board span {
+  display: block;
+  margin: 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.orientation-board strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-strong);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .hero-grid {
@@ -525,6 +562,7 @@ main {
   .feature-layout,
   .split-section,
   .hero-grid,
+  .orientation-board,
   .project-panels,
   .architecture-grid,
   .modal-grid {

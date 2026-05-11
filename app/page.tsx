@@ -32,11 +32,19 @@ export default function HomePage() {
       <div className="page-shell">
         <SectionNav sections={siteContent.sections} />
         <div className="story-column">
-          <section className="hero-panel" id="intro">
+          <section className="hero-panel" data-in-view="true" id="intro">
             <div className="eyebrow">{siteContent.hero.eyebrow}</div>
             <p className="hero-kicker">{siteContent.hero.kicker}</p>
             <h1>{siteContent.hero.title}</h1>
             <p className="hero-summary">{siteContent.hero.summary}</p>
+            <div className="orientation-board" aria-label="Homepage orientation board">
+              {siteContent.hero.board.map((item) => (
+                <article key={item.label}>
+                  <span>{item.label}</span>
+                  <strong>{item.value}</strong>
+                </article>
+              ))}
+            </div>
             <div className="hero-actions">
               {siteContent.hero.links.map((link, index) => (
                 <LinkPill

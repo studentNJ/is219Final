@@ -14,6 +14,28 @@ export const siteContent = {
     audience: "Recruiters and hiring managers evaluating execution",
     focus: "Applied AI workflow, product delivery, and data systems",
     delivery: "Live public demo paired with a portfolio built for fast review",
+    board: [
+      {
+        label: "Audience",
+        value: "Recruiters and engineering managers",
+      },
+      {
+        label: "Vibe",
+        value: "Technical, credible, and product-focused",
+      },
+      {
+        label: "Look",
+        value: "Housing analytics studio with dashboard-style proof",
+      },
+      {
+        label: "Proof",
+        value: "Live deployment, GitHub repos, and technical specs",
+      },
+      {
+        label: "Build",
+        value: "Next.js, API orchestration, AI workflow, data normalization",
+      },
+    ],
     links: [
       { label: "Live Project", href: "https://student-reality-lab2-concepcion.onrender.com" },
       { label: "Portfolio Repo", href: "https://github.com/studentNJ/is219Final" },
