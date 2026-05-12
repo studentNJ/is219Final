@@ -3,7 +3,7 @@ import { SectionNav } from "@/components/section-nav";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SpecsModal } from "@/components/specs-modal";
 import { TapAdvance } from "@/components/tap-advance";
-import resumePreview from "@/documentation/image.png";
+import resumePreview from "@/image.png";
 import { siteContent } from "@/lib/site-content";
 
 function LinkPill({
