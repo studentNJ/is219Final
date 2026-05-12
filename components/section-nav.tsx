@@ -14,23 +14,28 @@ export function SectionNav({ sections }: { sections: readonly Section[] }) {
     const sectionElements = sections
       .map((section) => document.getElementById(section.id))
       .filter((element): element is HTMLElement => Boolean(element));
+    const visibilityById = new Map<string, number>();
+
+    sectionElements.forEach((element) => {
+      visibilityById.set(element.id, element.id === activeId ? 1 : 0);
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           entry.target.setAttribute("data-in-view", entry.isIntersecting ? "true" : "false");
+          visibilityById.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
         });
 
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+        const visible = Array.from(visibilityById.entries())
+          .sort((left, right) => right[1] - left[1])[0];
 
-        if (visible?.target.id) {
-          setActiveId(visible.target.id);
+        if (visible && visible[1] > 0) {
+          setActiveId(visible[0]);
         }
       },
       {
-        rootMargin: "-20% 0px -55% 0px",
+        rootMargin: "-18% 0px -45% 0px",
         threshold: [0.2, 0.35, 0.5, 0.7],
       },
     );
